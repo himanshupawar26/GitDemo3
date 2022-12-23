@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+  
+  <listeners>
+  	<listener class-name="test.ListenersTestNG"></listener>
+  </listeners>
+  <parameter name="url" value="https://abcd.com" />
+  
+  <test thread-count="5" name="dept-1">
+    <classes>
+      <class name="test.classA"/>
+      <class name="test.classB"/>
+    </classes>
+  </test> 
+  
+  <test thread-count="5" name="dept-2">
+    <classes>
+      <class name="test.class1">
+      	<methods>
+      		<exclude name="mobileLogin"></exclude>
+      	</methods>
+      </class>
+    </classes>
+  </test> 
+  
+</suite> 
